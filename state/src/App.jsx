@@ -2,12 +2,14 @@ import { useState } from 'react';
 import './App.css';
 
 const COLORS = ['pink', 'green', 'blue', 'yellow', 'purple'];
-
+let count = 0;
 function App() {
   const [backgroundColor, setBackgroundColor] = useState(COLORS[0]);
 
   const onButtonClick = (color) => () => {
     setBackgroundColor(color);
+    count++;
+    
   };
 
   return (
@@ -27,6 +29,7 @@ function App() {
           {color}
         </button>
       ))}
+      <h1>count={count}</h1>
     </div>
   );
 }
